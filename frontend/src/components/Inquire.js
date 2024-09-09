@@ -20,7 +20,7 @@ const Inquire = () => {
       const fetchTimeSlots = async () => {
         try {
           const response = await axios.get(
-            "http://localhost:5000/api/check/checkSlot",
+            `${process.env.REACT_APP_API_URL}/api/check/checkSlot`,
             {
               params: { date: selectedDate },
             }
@@ -50,7 +50,7 @@ const Inquire = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/check/bookSlot",
+        `${process.env.REACT_APP_API_URL}/api/check/bookSlot`,
         {
           firstName,
           lastName,
@@ -79,7 +79,7 @@ const Inquire = () => {
         setSelectedSlotText("");
 
         const updatedSlots = await axios.get(
-          "http://localhost:5000/api/check/checkSlot",
+          `${process.env.REACT_APP_API_URL}/api/check/checkSlot`,
           {
             params: { date: bookingDate },
           }
