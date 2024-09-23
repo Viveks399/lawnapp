@@ -29,9 +29,9 @@ const Main = () => {
       <div ref={propertiesRef}>
         <Properties />
       </div>
-      <div>
+      {/* <div>
         <Photos />
-      </div>
+      </div> */}
       <div>
         <Offers />
       </div>
