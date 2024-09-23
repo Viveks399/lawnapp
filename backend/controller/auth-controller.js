@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import Admin from "../models/admin.js";
+import Admin from "../models/Admin.js";
 
 dotenv.config();
 
