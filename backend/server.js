@@ -5,6 +5,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 import timeSlot from "./routes/timeSlot.js";
+import adminRoute from "./routes/adminRoute.js";
+import offerRoute from "./routes/offersRoute.js";
 
 //import { generateTimeSlots } from "./utils/generateTimeSlots.js";
 
@@ -30,6 +32,8 @@ const connect = async () => {
 
 //routes
 app.use("/api/check/", timeSlot);
+app.use("/api/admin/", adminRoute);
+app.use("/api/crud/", offerRoute);
 
 // Start server
 const PORT = process.env.PORT || 5000;

@@ -4,6 +4,8 @@ import Service from "./Service";
 import Properties from "./Properties";
 import Inquire from "./Inquire";
 import Intro from "./Intro";
+import Offers from "./Offers";
+import Photos from "./Photos";
 
 const Main = () => {
   const serviceRef = useRef(null);
@@ -26,6 +28,12 @@ const Main = () => {
       </div>
       <div ref={propertiesRef}>
         <Properties />
+      </div>
+      <div>
+        <Photos />
+      </div>
+      <div>
+        <Offers />
       </div>
       <div ref={inquireRef}>
         <Inquire />

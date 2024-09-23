@@ -2,7 +2,7 @@ import React from "react";
 
 const Properties = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white p-8 rounded-lg shadow-lg">
+    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white p-8 shadow-lg">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center uppercase tracking-wide">
         Properties We Service
       </h2>
