@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import Admin from "../models/Admin.js";
+import Admin from "../models/admin.js";
 
 // Middleware to protect routes that require admin access
 const adminAuth = async (req, res, next) => {
@@ -23,7 +23,9 @@ const adminAuth = async (req, res, next) => {
     console.log("reacher here");
     next();
   } catch (error) {
-    res.status(401).json({ message: "Not authorized. Please log in as admin." });
+    res
+      .status(401)
+      .json({ message: "Not authorized. Please log in as admin." });
   }
 };
 
