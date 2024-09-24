@@ -1,4 +1,3 @@
-// controllers/offerController.js
 import Offer from "../models/offers.js"; // Import the Offer model
 
 // Get Offer Function
