@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Inquire = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [timeSlots, setTimeSlots] = useState([]);
   const [firstName, setFirstName] = useState("");
@@ -41,6 +43,11 @@ const Inquire = () => {
 
     setSelectedSlot(e.target.value);
     setSelectedSlotText(selectedOptionText);
+  };
+
+  const handleLogin = (e) => {
+    console.log("handleLogin");
+    navigate("/login");
   };
 
   // Handle form submission
@@ -97,7 +104,7 @@ const Inquire = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-green-100 to-gray-100 p-8 rounded-lg shadow-lg">
+    <div className="bg-gradient-to-r from-green-100 to-gray-100 p-8 rounded-lg shadow-lg relative">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider text-gray-800">
           Ready to Transform?
@@ -309,15 +316,14 @@ const Inquire = () => {
         </div>
       </div>
 
-      {/* Loader Popup Modal */}
-      {loading && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-green-500"></div>
-            <p className="text-center text-gray-700 mt-4">Processing...</p>
-          </div>
-        </div>
-      )}
+      <div className="absolute bottom-9 right-9">
+        <button
+          onClick={handleLogin}
+          className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 opacity-70 hover:opacity-100"
+        >
+          Admin Login
+        </button>
+      </div>
     </div>
   );
 };
