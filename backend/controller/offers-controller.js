@@ -1,11 +1,10 @@
-import Offer from "../models/offers.js"; // Import the Offer model
+import Offer from "../models/offers.js";
 
 // Get Offer Function
 export const getOffers = async (req, res) => {
   try {
-    console.log("inside getOffers");
-    const offers = await Offer.find({ isVisible: true }); // Get only visible offers
-    res.json(offers); // Return all offers
+    const offers = await Offer.find({ isVisible: true }); 
+    res.json(offers);
   } catch (error) {
     console.error("Error fetching offers:", error);
     res.status(500).json({ message: "Error fetching offers." });

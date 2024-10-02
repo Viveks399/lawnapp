@@ -1,42 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [bookings, setBookings] = useState([]);
-  const [error, setError] = useState("");
-
-  // Fetch bookings on component load
-  useEffect(() => {
-    const fetchBookings = async () => {
-      try {
-        // Get token from localStorage
-        const token = localStorage.getItem("token");
-
-        // If token is not found, redirect to login
-        if (!token) {
-          return setError("Please log in to access the dashboard");
-        }
-
-        // Set the token in the Authorization header
-        const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/admin/bookings`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-
-        setBookings(response.data);
-      } catch (err) {
-        setError("Error fetching bookings.");
-      }
-    };
-
-    fetchBookings();
-  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -49,6 +15,9 @@ const Dashboard = () => {
 
   const handleOffersButton = () => {
     navigate("/adminoffers");
+  };
+  const handlePhotoButton = () => {
+    navigate("/adminphotos");
   };
 
   return (
@@ -79,12 +48,12 @@ const Dashboard = () => {
           >
             Manage Offers
           </button>
-        </div>
-
-        <div className="bg-gray-100 p-8 rounded-lg h-64 border border-gray-300 flex items-center justify-center">
-          <p className="text-gray-600 text-lg">
-            Your future content will appear here...
-          </p>
+          <button
+            onClick={handlePhotoButton}
+            className="px-6 py-2 bg-teal-500 text-white font-semibold rounded-full shadow-md hover:bg-teal-600 transition-transform transform hover:scale-105 duration-300"
+          >
+            Add Photos
+          </button>
         </div>
       </div>
     </div>

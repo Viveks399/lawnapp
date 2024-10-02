@@ -7,6 +7,7 @@ import Bookings from "./components/Bookings";
 import AdminOfferControl from "./components/AdminOfferControl";
 import Offers from "./components/Offers";
 import Photos from "./components/Photos";
+import AdminPhotoControl from "./components/AdminPhotoControl";
 
 function App() {
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ function App() {
     {
       path: "/offers",
       element: <Offers />,
+    },
+    {
+      path: "/adminphotos",
+      element: <AdminPhotoControl />,
     },
     {
       path: "/photos",

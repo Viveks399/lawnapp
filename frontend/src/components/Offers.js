@@ -10,7 +10,6 @@ const Offers = () => {
         const response = await axios.get(
           `${process.env.REACT_APP_API_URL}/api/crud/offers`
         );
-        // Filter the offers that are visible and set them in state
         const visibleOffers = response.data.filter((offer) => offer.isVisible);
         setOffers(visibleOffers);
       } catch (error) {

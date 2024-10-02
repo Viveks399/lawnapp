@@ -20,7 +20,6 @@ const adminAuth = async (req, res, next) => {
     req.admin = admin;
 
     // Proceed to the next middleware or route handler
-    console.log("reacher here");
     next();
   } catch (error) {
     res

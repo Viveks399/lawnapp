@@ -16,7 +16,6 @@ const Inquire = () => {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedSlotText, setSelectedSlotText] = useState("");
 
-  // Fetch available time slots for the selected date
   useEffect(() => {
     if (selectedDate) {
       const fetchTimeSlots = async () => {
@@ -46,7 +45,6 @@ const Inquire = () => {
   };
 
   const handleLogin = (e) => {
-    console.log("handleLogin");
     navigate("/login");
   };
 
@@ -297,7 +295,6 @@ const Inquire = () => {
           </form>
         </div>
 
-        {/* Contact Section */}
         <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform transition duration-500">
           <h5 className="text-xl font-bold text-green-600 mb-4">Contact</h5>
           <p className="mb-2">
